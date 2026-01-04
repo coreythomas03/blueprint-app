@@ -1,0 +1,155 @@
+/**
+ * Topic Screen Styling
+ * 
+ * Styles for individual topic pages with empty state
+ * Features top bar with title, logo, and back navigation
+ */
+
+/* Topic Container */
+.topic-container {
+  min-height: 100vh;
+  background: var(--dark-bg);
+}
+
+/* Topic Header */
+.topic-header {
+  background: linear-gradient(180deg, var(--grey-bg) 0%, var(--dark-bg) 100%);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(74, 190, 216, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Topic Logo */
+.topic-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Topic Title */
+.topic-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--light-blue);
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  text-shadow: 0 0 10px rgba(74, 190, 216, 0.3);
+}
+
+/* Back Button */
+.back-button {
+  background: linear-gradient(135deg, var(--button-gradient-start) 0%, var(--button-gradient-end) 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #4A4A4A 0%, #3A3A3A 100%);
+  box-shadow: 0 4px 12px rgba(74, 190, 216, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* Topic Content */
+.topic-content {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  min-height: 60vh;
+  animation: fadeIn 0.5s ease;
+}
+
+.empty-icon {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.empty-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--light-blue);
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.8;
+}
+
+.empty-description {
+  font-size: 16px;
+  color: rgba(93, 201, 226, 0.6);
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topic-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .topic-title {
+    font-size: 20px;
+  }
+
+  .topic-logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .topic-content {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .empty-state {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .empty-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .empty-title {
+    font-size: 20px;
+  }
+
+  .empty-description {
+    font-size: 14px;
+  }
+}
