@@ -29,7 +29,7 @@ const Topic = () => {
     'financial': 'Financial Success',
     'social': 'Social Mastery',
     'relationships': 'Relationships',
-    'style': 'Style & Appearance',
+    'image': 'Image',
     'fulfillment': 'Purpose & Fulfillment',
     'mindset': 'Mindset & Psychology',
     'skills': 'Skills & Learning'
@@ -51,13 +51,7 @@ const Topic = () => {
       <div className="topic-header">
         {/* Logo */}
         <div className="topic-logo">
-          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" stroke="var(--primary-blue)" strokeWidth="2" fill="none"/>
-            <path d="M30 40 Q50 20 70 40" stroke="var(--primary-blue)" strokeWidth="2" fill="none"/>
-            <path d="M30 50 Q50 30 70 50" stroke="var(--primary-blue)" strokeWidth="2" fill="none"/>
-            <path d="M30 60 Q50 40 70 60" stroke="var(--primary-blue)" strokeWidth="2" fill="none"/>
-            <circle cx="50" cy="70" r="8" fill="var(--primary-blue)"/>
-          </svg>
+          <img src="/logo.png" alt="Blueprint Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
         </div>
 
         {/* Topic Title */}

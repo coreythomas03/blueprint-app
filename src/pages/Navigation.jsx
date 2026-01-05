@@ -5,9 +5,9 @@
  * Displays a list of topic containers that route to individual topic screens.
  * 
  * Features:
- * - Top bar with Blueprint title and profile navigation
- * - Username display with profile icon
- * - List of topic containers with white outlined boxes
+ * - Top bar with Blueprint logo and title
+ * - Profile navigation with username display
+ * - List of topic containers with custom icons
  * - Click tracking to reorder topics (future implementation)
  * - Responsive grid layout
  * - Consistent dark theme with light blue accents
@@ -17,12 +17,22 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import '../styles/Navigation.css';
 
+// Import topic icons
+import fitnessIcon from '/fitness.png';
+import financialIcon from '/finacials.png';
+import socialIcon from '/social.png';
+import relationshipsIcon from '/relationships.png';
+import imageIcon from '/image.png';
+import fulfillmentIcon from '/fufillment.png';
+import mindsetIcon from '/mindset.png';
+import skillsIcon from '/skillset.png';
+
 const Navigation = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
   /**
-   * List of available topics
+   * List of available topics with custom icons
    * In future, this will be fetched from a database and reordered based on user interaction
    */
   const topics = [
@@ -30,49 +40,49 @@ const Navigation = () => {
       id: 'fitness',
       title: 'Fitness & Health',
       description: 'Build your dream physique and optimize your health',
-      icon: '💪'
+      icon: fitnessIcon
     },
     {
       id: 'financial',
       title: 'Financial Success',
       description: 'Master money management and wealth building',
-      icon: '💰'
+      icon: financialIcon
     },
     {
       id: 'social',
       title: 'Social Mastery',
       description: 'Develop charisma and expand your network',
-      icon: '🤝'
+      icon: socialIcon
     },
     {
       id: 'relationships',
       title: 'Relationships',
       description: 'Build meaningful connections and partnerships',
-      icon: '❤️'
+      icon: relationshipsIcon
     },
     {
-      id: 'style',
-      title: 'Style & Appearance',
+      id: 'image',
+      title: 'Image',
       description: 'Elevate your look and personal presentation',
-      icon: '👔'
+      icon: imageIcon
     },
     {
       id: 'fulfillment',
       title: 'Purpose & Fulfillment',
       description: 'Discover meaning and live with intention',
-      icon: '🎯'
+      icon: fulfillmentIcon
     },
     {
       id: 'mindset',
       title: 'Mindset & Psychology',
       description: 'Master your thoughts and mental strength',
-      icon: '🧠'
+      icon: mindsetIcon
     },
     {
       id: 'skills',
       title: 'Skills & Learning',
       description: 'Acquire valuable abilities and knowledge',
-      icon: '📚'
+      icon: skillsIcon
     }
   ];
 
@@ -95,7 +105,10 @@ const Navigation = () => {
     <div className="navigation-container">
       {/* Top Navigation Bar */}
       <div className="navigation-header">
-        <h1 className="navigation-title">Blueprint</h1>
+        <div className="navigation-brand">
+          <img src="/logo.png" alt="Blueprint Logo" className="navigation-logo" />
+          <h1 className="navigation-title">Blueprint</h1>
+        </div>
         
         <div className="profile-section" onClick={handleProfileClick}>
           {/* Profile Icon */}
@@ -130,7 +143,9 @@ const Navigation = () => {
                 }
               }}
             >
-              <div className="topic-icon">{topic.icon}</div>
+              <div className="topic-icon-wrapper">
+                <img src={topic.icon} alt={topic.title} className="topic-icon-image" />
+              </div>
               <div className="topic-content">
                 <h3 className="topic-title">{topic.title}</h3>
                 <p className="topic-description">{topic.description}</p>
