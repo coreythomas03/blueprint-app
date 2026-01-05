@@ -3,6 +3,7 @@
  * 
  * Styles for the main navigation hub with topic containers
  * Features top bar with logo, profile navigation, and grid layout for topics
+ * Custom Icons
  */
 
 /* Navigation Container */
@@ -291,4 +292,4 @@
     font-size: 12px;
     -webkit-line-clamp: 2;
   }
-}
+} 
